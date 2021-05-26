@@ -1,0 +1,128 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background: #654275;
+    background: linear-gradient(183deg, rgb(22 66 86), #09151b);
+}
+
+.logo {
+    text-align: center;
+}
+
+    .logo img {
+        max-width: 300px;
+        width: 100%;
+    }
+
+nav {
+    top: 0;
+    margin: 10px auto 0 auto;
+    position: -webkit-sticky;
+    position: sticky;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    /*box-shadow: inset 0px 2px 17px 0px rgba(0, 0, 0, .58);*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(88deg, black, transparent);
+    /*background: linear-gradient(88deg, black, #1337489e);*/
+}
+
+    nav a.sel {
+        background-color: #153f52;
+    }
+
+.mlink {
+    color: #ececec;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    display: block;
+    text-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    transition: background .3s;
+}
+
+    .mlink:hover {
+        background-color: #153f52;
+    }
+
+
+.main_container {
+    box-sizing: border-box;
+    margin: 2em auto;
+    background: rgb(28, 21, 50);
+    width: 80%;
+    padding: 1.5em;
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 140%;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.6);
+    color: #dadada;
+    text-align: justify;
+    background: linear-gradient(136deg, black, transparent);
+}
+
+    .main_container a {
+        color: #1493b9;
+    }
+
+        .main_container a:visited {
+            color: #0a5c96;
+        }
+
+        .main_container a:active {
+            color: #0b3858;
+        }
+
+        .main_container a:hover {
+            color: #0c3858;
+        }
+
+    .main_container ul {
+        text-align: left;
+    }
+
+    .main_container img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 2px 1px 10px 0 black;
+    }
+
+    .main_container h1 {
+        line-height: initial;
+        word-break: break-word;
+        text-align: left;
+    }
+
+
+
+@media screen and (max-width: 650px) {
+    .main_container {
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .main_container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .main_container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta nane="description" content="Steps for creating a new plugin for the Überton VST plugin project">
+    <meta name="author" content="Überton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/main_developer.css">
+    <link rel="stylesheet" href="css/documentation.css">
+
+    <title>Überton Dev &middot; Creating a new plugin</title>
+
+    <script>// prevent css transitions on start</script>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="media/Logo_Gray_Transparent_1200x500.png">
+    </div>
+    <nav>
+        <a class="mlink" href="../index.html">Home</a>
+        <a class="mlink" href="javascript:void(0)">Downloads</a>
+        <a class="mlink sel" href="Developer.html">Developer</a>
+        <a class="mlink" href="https://github.com/Uberton/Uberton" target="_blank">Source Code</a>
+    </nav>
+
+
+    <div class="main_container docs_mc">
+        <div class="mc_header">
+            <h1>
+                Creating a new plugin
+            </h1>
+        </div>
+        <div class="mc_content">
+            <p>
+                The easiest way to add a new plugin to the library is to use the <i>VstProjectGenerator</i> that is
+                delivered with this library. This command line tool helps you to create the codesbase for a new VST Fx
+                or Instrument. It duplicates either the BasicFx or the BasicInstrument project and replaces
+                all names, namespaces and creates new GUIDs. Afterwards you might need to re-run cmake (see
+                <a href="Installation and Setup.html">Installation and Setup</a>) to generate project files for your
+                IDE. Visual Studio already does that for you when compiling any project of the SDK but to make it aware
+                of the added folder, make some small change to the <span class="inlcode">CMakeLists.txt</span> file in
+                the Plugins folder like adding a space at the end.
+            </p>
+            <p>
+                Otherwise you can just manually copy the BasicInstrument and:
+                <ul>
+                    <li>
+                        Go into the new folder and open <span class="inlcode">CMakeLists.txt</span> and replace all
+                        occurences of BasicFx/BasicInstrument by the new plugin name.
+                    </li>
+                    <li>
+                        In the resource folder also replace the name in the <span class="inlcode">Info.plist</span> file.
+                    </li>
+                    <li>Re-run cmake and open the newly created project.</li>
+                    <li>
+                        Go to the <span class="inlcode">ids.h</span> file and insert two new unique GUIDs (can be generated
+                        <a href="https://www.guidgenerator.com/">here</a> - without hypens).
+                    </li>
+                    <li>In version.h, change the plugin name.</li>
+                    <li>
+                        Change the namespace BasicFx/BasicInstrument to a new one related to the plugin name. This is
+                        important for creating plugin bundles that contain this plugin.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                In both cases you might want to change the plugin category in the
+                <span class="inlcode">factory.cpp</span> source file.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
