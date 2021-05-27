@@ -127,15 +127,15 @@ nav {
 }
 
 
-main_container a {
+.main_container a {
     color: #9c9595;
 }
 
-    main_container a:active {
+    .main_container a:active {
         color: #211c1c;
     }
 
-    main_container a:visited {
+    .main_container a:visited {
         color: #8a8383;
     }
 
