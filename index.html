@@ -21,9 +21,16 @@
     <title>Überton &middot; Home</title>
 
     <script>// prevent css transitions on start</script>
+    <script>
+        /*function myfunc() {
+            var c = Math.floor(Math.random() * 1000000);
+            document.getElementsByTagName("body")[0].style.backgroundColor = "#" + c;
+            console.log(c);
+        }*/
+    </script>
 </head>
 
-<body>
+<body onload="myfunc()">
     <div class="header">
         <nav>
             <a class="mlink sel" href="javascript:void(0)">Home</a>
@@ -44,7 +51,7 @@
         <div class="main_container">
 
             <p>
-                The Überton Project aims to develop ready-to-use open-source audio plugins (VST) for instruments and sound effects based on concepts of theoretical physics.
+                The Überton Project aims to develop ready-to-use open-source audio plugins (VST&reg;) for instruments and sound effects based on concepts of theoretical physics.
             </p>
             <p>
                 In the virtual space we want to hear real sounds that are inaccessable by real instruments.
@@ -56,12 +63,11 @@
                 The Überton project initially started with a academy course "Co(s)mic Sounds" and the first plugin was developed by J. Kipping, K. Levi, S. Lentner. The current development is supported by the Young Academy of Science and the University of Hamburg.
             </p>
             <p>
-                Our main goal is to also use the newly built instruments in creative expressions and art. In the academy course, the participants developed and performed a first experimental composition "Raum et ude". The audio file and the program booklet can be downloaded here:
+                Our main goal is to also use the newly built instruments in creative expressions and art. In the academy course, the participants developed and performed a first experimental composition "Raum et ude". The audio file and the program booklet can be downloaded <a class="mhref" href="Listening">here</a>:
             </p>
 
-            <p>
-                <a href="Downloads" class="jumpbutton">Plugins</a><a href="Listening" class="jumpbutton">Listen</a>
-            </p>
+            <!--<p><a href="Downloads" class="jumpbutton">Plugins</a><a href="Listening" class="jumpbutton">Listen</a></p>-->
+            <!--<img src="media/img/VST_Compatible_Logo_Steinberg_with_TM.png" width=200 />-->
         </div>
         <div class="footer">
             <p>

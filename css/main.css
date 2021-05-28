@@ -6,6 +6,8 @@ body {
     background: #654275;
     padding-top: 30px;
     background: linear-gradient(183deg, #654275, #09151b);
+    background: linear-gradient(183deg, #44444b, #1e1f30);
+    background: linear-gradient(183deg, #4b4b5f, #1e1f30);
     background: linear-gradient(183deg, #654275, #1e1f30);
 }
 
@@ -37,7 +39,7 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 4px;
+    /*margin-top: 4px;*/
     font-size: 15px;
     box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, .1);
 }
@@ -62,7 +64,7 @@ nav {
 }
 
     .mlink:hover {
-        background-color: #533963;
+        background-color: rgba(0, 0, 0, .17);
     }
 
 .footer {
@@ -116,7 +118,7 @@ nav {
 .main_container {
     background: transparent;
     box-sizing: border-box;
-    padding: .3em;
+    padding: 8px;
     border: 1px solid white;
     line-height: 140%;
     text-align: center;
@@ -147,13 +149,14 @@ nav {
     }
 
     .mlink {
-        padding:4px 10px;
+        padding: 4px 10px;
     }
 
     .main_wrapper {
         width: 95%;
     }
 }
+
 @media screen and (max-width: 400px) {
     nav {
         /*float: initial;*/
