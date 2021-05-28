@@ -22,16 +22,27 @@
 
     <script>// prevent css transitions on start</script>
     <script>
-        /*function myfunc() {
-            var c = Math.floor(Math.random() * 1000000);
-            document.getElementsByTagName("body")[0].style.backgroundColor = "#" + c;
-            console.log(c);
-        }*/
+        function myfunc() {
+            const el = document.querySelector(".nav-wrapper")
+            console.log(el);
+            const observer = new IntersectionObserver(
+                ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+                { threshold: [1] }
+            );
+
+            observer.observe(el);
+        }
     </script>
 </head>
 
 <body onload="myfunc()">
+    <div class="header-spacer"></div>
     <div class="header">
+        <div class="logo">
+            <img src="media/img/Logo_Gray_Transparent_1200x500.png">
+        </div>
+    </div>
+    <div class="nav-wrapper">
         <nav>
             <a class="mlink sel" href="javascript:void(0)">Home</a>
             <a class="mlink" href="Listening">Listening</a>
@@ -39,13 +50,8 @@
             <a class="mlink" href="Developer">Developer</a>
             <a class="mlink" href="Contact">Contact</a>
         </nav>
-        <hr class="nav_hr" />
-
     </div>
-    <div class="logo">
-        <img src="media/img/Logo_White_Transparent_1200x500.png">
-    </div>
-
+    <div class="banner"></div>
 
     <div class="main_wrapper">
         <div class="main_container">
