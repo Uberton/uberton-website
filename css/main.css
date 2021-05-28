@@ -69,12 +69,12 @@ nav {
 }
 
 
-nav a.sel {
-    color: #bbb;
-    background: rgba(0, 0, 0,.35);
-    color: black;
-    background: rgba(255, 255, 255, .6);
-}
+    nav a.sel {
+        color: #bbb;
+        background: rgba(0, 0, 0,.35);
+        color: black;
+        background: rgba(255, 255, 255, .6);
+    }
 
 
 .is-pinned {
@@ -161,24 +161,125 @@ nav a.sel {
         color: #8a8383;
     }
 
-@media screen and (max-width: 600px) {
+.menu-button {
+    padding: 5px;
+    display: table-cell;
+    border-radius: 100px;
+    display: none;
+    position: relative;
+    margin-right: 20px;
+    transition: .3s;
+}
+
+    .menu-button span, .menu-button::after, .menu-button::before {
+        content: '';
+        background: black;
+        height: 2px;
+        width: 20px;
+        display: block;
+        margin: 6px;
+    }
+
+.menu-open-button {
+    background: rgb(255, 255, 255, .84);
+    box-shadow: 0 0 6px 1px rgb(0, 0, 0, .28%);
+}
+
+.is-pinned .menu-open-button {
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-open-button:hover {
+    background: rgba(255,255,255, .7);
+}
+
+.menu-open-button:active {
+    background: rgba(255,255,255, .5);
+}
+
+
+.menu-close-button {
+    float: right;
+    height: 30px;
+    padding-top: 8px;
+    margin-bottom: 4px;
+}
+
+    .menu-close-button span {
+        display: none;
+    }
+
+    .menu-close-button:hover {
+        background: rgba(0,0,0, .40);
+    }
+
+    .menu-close-button:active {
+        background: rgba(0,0,0, .70);
+    }
+
+    .menu-close-button::before {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        left: 0px;
+        position: relative;
+        top: 8px;
+    }
+
+    .menu-close-button::after {
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    .menu-close-button::before, .menu-close-button::after {
+        background: black;
+        width: 25px;
+    }
+
+
+
+
+@media screen and (max-width: 900px) {
+
+    .menu-button {
+        display: table-cell;
+    }
+
     nav {
         flex-direction: column;
-        position: relative;
-        font-size: 17px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-wrapper2 {
+        width: 100%;
+        height: 0;
+        background: white;
+        position: fixed;
+        top: 0px;
+        overflow: hidden;
+        transition: .8s;
+        left: 0;
     }
 
     .mlink {
-        padding: 4px 10px;
-    }
-
-    .main_wrapper {
-        width: 95%;
+        padding: 15px 10px;
+        color: black;
     }
 }
 
-@media screen and (max-width: 400px) {
-    nav {
-        /*float: initial;*/
+
+.is_open {
+    height: 100%;
+    padding-top: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .main_wrapper {
+        width: 95%;
     }
 }
