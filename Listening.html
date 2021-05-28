@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <meta nane="description" content="Listening examples of the Überton VST plugin project">
+    <meta name="description" content="Listening examples of the Überton VST plugin project">
     <meta name="author" content="Überton">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,6 +21,93 @@
     <title>Überton &middot; Listening</title>
 
     <script>// prevent css transitions on start</script>
+
+    <style>
+        .proj-section {
+            background-color: rgb(0, 0, 0, 0.2);
+            margin: 30px;
+            padding: 15px 30px;
+            text-align: left;
+            display: flex;
+            font-size: 90%;
+        }
+
+        .proj-section-col {
+            margin: 20px;
+        }
+
+            .proj-section-col img {
+                width: 100%;
+                box-shadow: 1px 1px 7px rgba(17, 16, 25, .74);
+            }
+
+            .proj-section-col:nth-child(1) {
+                flex-basis: 40%;
+                flex-shrink: 1;
+            }
+
+            .proj-section-col:nth-child(2) {
+                flex-basis: 60%;
+                flex-shrink: 1.3;
+            }
+
+        .audioplayer {
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .proj-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .newplayer {
+            background: black;
+        }
+
+        @media screen and (max-width:800px) {
+
+            .proj-section {
+                flex-direction: column;
+            }
+
+            .proj-section-col:nth-child(1) {
+                flex: 1 1 auto;
+            }
+
+            .proj-section-col:nth-child(2) {
+                flex: 1 1 auto;
+            }
+        }
+
+        .proj-section-col:nth-child(1) {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width:660px) {
+
+            .proj-section {
+                margin: 15px;
+                padding: 8px;
+            }
+        }
+
+        @media screen and (max-width:380px) {
+
+            .proj-section {
+                margin: 8px;
+                padding: 8px;
+            }
+        }
+
+        @media screen and (max-width:330px) {
+
+            .proj-section-col {
+                margin: 8px 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -44,9 +131,43 @@
         <div class="main_container">
 
             <p>
-                <b>Listening</b>
+                <b>Projects using Überton</b>
             </p>
-           
+            <div class="proj-section">
+                <div class="proj-section-col">
+
+                    <img src="media/img/raum_et_ude_preview.jpg" />
+                </div>
+                <div class="proj-section-col">
+                    <p class="proj-title">
+                        Raum et ude
+                    </p>
+                    <p>
+                        This composition has been developed by participants of the academy course "Co(s)mic Sounds".
+                    </p>
+                    <p>
+                        A virtual space is explored with sounds and instruments and sometimes extended into dimensions higher
+                        than three through virtual effects and instruments.
+                    </p>
+                    <p>
+                        Read the booklet for more information (German only).
+                    </p>
+                    <!--<div class="newplayer">
+                        <button>Play</button>
+                        <button>Pause</button>
+                    </div>-->
+                    <audio class="audioplayer" controls>
+                        <source src="media/audio/raum_et_ude.mp3" type="audio/mp3" />
+                        Your browser doesn't support playing this audio file.
+                    </audio>
+                    <br />
+                    <a class="mhref" href="media/pdf/Programmheft_raum_et_ude.pdf" download="Programmheft_raum_et_ude.pdf">Download Booklet</a>
+                    <br />
+                    <a class="mhref" href="media/audio/raum_et_ude.mp3" download="raum_et_ude.mp3">Download Audio</a>
+
+                </div>
+            </div>
+
         </div>
         <div class="footer">
             <p>
