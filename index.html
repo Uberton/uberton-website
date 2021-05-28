@@ -21,21 +21,10 @@
     <title>Überton &middot; Home</title>
 
     <script>// prevent css transitions on start</script>
-    <script>
-        function myfunc() {
-            const el = document.querySelector(".nav-wrapper")
-            console.log(el);
-            const observer = new IntersectionObserver(
-                ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
-                { threshold: [1] }
-            );
-
-            observer.observe(el);
-        }
-    </script>
+    <script src="js/main.js"></script>
 </head>
 
-<body onload="myfunc()">
+<body onload="onBodyLoad()">
     <div class="header-spacer"></div>
     <div class="header">
         <div class="logo">
@@ -73,7 +62,7 @@
             </p>
 
             <!--<p><a href="Downloads" class="jumpbutton">Plugins</a><a href="Listening" class="jumpbutton">Listen</a></p>-->
-            <!--<img src="media/img/VST_Compatible_Logo_Steinberg_with_TM.png" width=200 />-->
+            <img src="media/img/VST_Compatible_Logo_Steinberg_with_TM.png" width=180 />
         </div>
         <div class="footer">
             <p>
