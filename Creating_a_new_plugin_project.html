@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <meta nane="description" content="Steps for creating a new plugin for the Überton VST plugin project">
+    <meta name="description" content="Steps for creating a new plugin for the Überton VST plugin project">
     <meta name="author" content="Überton">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -45,7 +45,7 @@
         <div class="mc_content">
             <p>
                 The easiest way to add a new plugin to the library is to use the <i>VstProjectGenerator</i> that is
-                delivered with this library. This command line tool helps you to create the codesbase for a new VST Fx
+                delivered with this library. This command line tool helps you to create the base code for a new VST Fx
                 or Instrument. It duplicates either the BasicFx or the BasicInstrument project and replaces
                 all names, namespaces and creates new GUIDs. Afterwards you might need to re-run cmake (see
                 <a href="Installation and Setup.html">Installation and Setup</a>) to generate project files for your
@@ -66,7 +66,7 @@
                     <li>Re-run cmake and open the newly created project.</li>
                     <li>
                         Go to the <span class="inlcode">ids.h</span> file and insert two new unique GUIDs (can be generated
-                        <a href="https://www.guidgenerator.com/">here</a> - without hypens).
+                        <a href="https://www.guidgenerator.com/" target="_blank">here</a> - without hypens).
                     </li>
                     <li>In version.h, change the plugin name.</li>
                     <li>

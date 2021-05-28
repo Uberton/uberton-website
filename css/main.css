@@ -127,15 +127,15 @@ nav {
 }
 
 
-.main_container a {
+.mhref {
     color: #9c9595;
 }
 
-    .main_container a:active {
+    .mhref:active {
         color: #211c1c;
     }
 
-    .main_container a:visited {
+    .mhref:visited {
         color: #8a8383;
     }
 
@@ -146,7 +146,16 @@ nav {
         font-size: 17px;
     }
 
+    .mlink {
+        padding:4px 10px;
+    }
+
     .main_wrapper {
         width: 95%;
+    }
+}
+@media screen and (max-width: 400px) {
+    nav {
+        /*float: initial;*/
     }
 }

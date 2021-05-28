@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <meta nane="description" content="Installation manual for the Überton VST plugin project">
+    <meta name="description" content="Installation manual for the Überton VST plugin project">
     <meta name="author" content="Überton">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -45,15 +45,15 @@
         </div>
         <div class="mc_content">
             <p>
-                First, you will need the VST SDK from Steinberg. See the Steinberg
+                First, you will need to set up the VST SDK from Steinberg. See the Steinberg
                 <a href="https://developer.steinberg.help/display/VST/How+to+set+up+my+system+for+VST+3"
                    target="_blank">installation documentation</a> but before generating the projects using CMake,
                 finish reading this document.
             </p>
             <p>
                 Download or clone the Überton project and place it so that the Überton folder is in the same folder
-                as <span class="inlcode">VST_SDK</span> (which again should contain the vst library folder <span class="inlcode">VST3_SDK</span>). To add the Überton library to the build process and the IDE
-                project, you need to add the lines
+                as <span class="inlcode">VST_SDK</span> (which again should contain the VST library folder <span class="inlcode">VST3_SDK</span>).
+                To add the Überton library to the build process and the IDE project, you need to add the lines
                 <pre class="code">
 set(SMTG_UBERTON_SRC_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../Uberton")
 set(SMTG_UBERTON_BIN_PATH "${SMTG_UBERTON_SRC_PATH}/build")
@@ -65,22 +65,22 @@ endif()</pre>
             <p>
                 For windows users, there occurs a little problem. When compiling the example plugins,
                 the output <span class="inlcode">.vst3</span> plugin is compiled to the Debug or Release folder. Your
-                Audio Software will not find it there and that is why the build process attempts to create a symbolic
+                audio software will not find it there and that is why the build process attempts to create symbolic
                 links in the <span class="inlcode">C:\Program Files\Common Files\VST3</span> folder. This should be the
                 solution except that it isn't because the permission to create symbolic links is not granted by default
                 on windows.
             </p>
             <p>
                 This <a href="https://developer.steinberg.help/display/VST/Preparation+on+Windows"
-                        target="_blank">hint</a> in the
-                Steinberg documentation solves this problem, BUT:
+                        target="_blank">hint</a> in the Steinberg documentation solves this problem, BUT:
                 <br>
                 This solution does not work for user accounts on your computer that are admins. So if you have only one
                 user account on your local pc, then it is probably the administrator and for windows-specific reasons it
-                seems, you can never get this to work. If your find a workaround though, tell us!
+                seems you can never get this to work. If your find a workaround though, tell us!
             </p>
             <p>
-                Instead, you can just remove the command to create the symbolic link by finding the file <span class="inlcode">VST3_SDK/cmake/modules/SMTG_AddSMTGLibrary.cmake</span> in the SDK and deleting or
+                Instead, you can just remove the command to create the symbolic link by finding the file
+                <span class="inlcode">VST3_SDK/cmake/modules/SMTG_AddSMTGLibrary.cmake</span> in the SDK and deleting or
                 commenting out these lines (re-run CMake afterwards):
             </p>
             <pre class="code">
@@ -112,10 +112,10 @@ add_custom_command(
                 </ul>
             </p>
             <p>
-                For MacUsers:
+                For Mac users:
             </p>
             <p>
-                Best use XCode. There seems to be a bug in the cmake files. You'll might get an error that your XCode
+                Best use XCode. Unfortunately, there seems to be a bug in the cmake files. You'll might get an error that your XCode
                 version is too old and that you need V9 or greater, even if you have Version 11 (latest version at the
                 time of this writing): "XCode 9 or newer is required" Funny. Maybe the version comparion fails because
                 the version is compared as string?? Anyway, you can just go to

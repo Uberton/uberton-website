@@ -38,3 +38,16 @@ body {
     font-family: monospace;
     overflow-wrap: break-word;
 }
+
+
+@media screen and (max-width: 550px) {
+    .mc_content {
+        padding: 1em 1.4em;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .mc_content {
+        padding: 1em 1em;
+    }
+}
