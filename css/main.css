@@ -7,29 +7,22 @@ body {
     background: linear-gradient(183deg, #654275, #09151b);
     background: linear-gradient(183deg, #44444b, #1e1f30);
     background: linear-gradient(183deg, #4b4b5f, #1e1f30);
-    background: linear-gradient(183deg, #654275, #1e1f30);
+    background: linear-gradient(183deg, #120817, #171717);
     background: #171717;
+    background: linear-gradient(357deg, #0f0713, #171717);
     width: 100%;
     margin: 0;
     font-family: Calibri;
 }
 
 .glow1 {
-    color: #3b3bef;
-    /* text-shadow: 0px 0px 5px #0101d8; */
-    color: green;
-    text-shadow: 0 0 4px #1c9235ba;
     color: #9bc7d4;
-    text-shadow: 0 0 4px #7ec6dc8c;
+    text-shadow: 0 0 8px rgba(126, 198, 220, .9);
 }
+
 .glow2 {
-    color: #3b3bef;
-    /* text-shadow: 0px 0px 5px #0101d8; */
-    color: green;
-    text-shadow: 0 0 4px #1c9235ba;
     color: #cea4ea;
-    text-shadow: 0 0 4px #921c1c4f, 0 0 16px #bc7ce8;
-    /*text-align: right;*/
+    text-shadow: 0 0 12px rgba(188, 124, 232, .9);
 }
 
 .banner {
@@ -168,14 +161,27 @@ nav {
     text-align: justify;
     /*border: 1px solid white;*/
     /*box-shadow: 2px 2px 12px rgba(0,0,0,.72);*/
+    align-items: center;
 }
+
+.main_container .img-container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+    .main_container img {
+        max-width: 100%;
+        box-shadow: 0 0 9px 2px black;
+    }
 
 .sec_content {
     margin: -40px 0;
 }
+
     .sec_content:first-of-type {
         margin-top: 0;
     }
+
 .mhref {
     color: #9c9595;
 }
@@ -305,6 +311,11 @@ nav {
     padding-top: 30px;
 }
 
+@media screen and (max-width: 800px) {
+    .main_container {
+        display:block;
+    }
+}
 @media screen and (max-width: 600px) {
     .main_wrapper {
         width: 95%;
@@ -317,7 +328,8 @@ nav {
         display: flex;
         justify-content: center;
     }
-    .logo img {
-        margin-top: 52px;
-    }
+
+        .logo img {
+            margin-top: 52px;
+        }
 }
