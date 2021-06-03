@@ -3,26 +3,11 @@ html {
 }
 
 body {
-    background: #654275;
-    background: linear-gradient(183deg, #654275, #09151b);
-    background: linear-gradient(183deg, #44444b, #1e1f30);
-    background: linear-gradient(183deg, #4b4b5f, #1e1f30);
-    background: linear-gradient(183deg, #120817, #171717);
     background: #171717;
     background: linear-gradient(357deg, #0f0713, #171717);
     width: 100%;
     margin: 0;
     font-family: Calibri;
-}
-
-.glow1 {
-    color: #9bc7d4;
-    text-shadow: 0 0 8px rgba(126, 198, 220, .9);
-}
-
-.glow2 {
-    color: #cea4ea;
-    text-shadow: 0 0 12px rgba(188, 124, 232, .9);
 }
 
 .banner {
@@ -43,8 +28,6 @@ body {
 .header {
     margin-top: 5px;
     padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .logo {
@@ -67,25 +50,48 @@ body {
 
 
 nav {
-    float: right;
-    z-index: 2;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     font-size: 15px;
     box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, .1);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
 }
 
 
-    nav a.sel {
+    nav .sel {
         color: #bbb;
-        background: rgba(0, 0, 0,.35);
+        background: rgba(0, 0, 0, .35);
         color: black;
         background: rgba(255, 255, 255, .6);
     }
 
+
+
+.mlink {
+    text-decoration: none;
+    padding: 20px 20px;
+    letter-spacing: 2px;
+    text-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    transition: background .3s;
+    font-weight: bold;
+    background: rgba(0, 0, 0, .7); /*fallback for browsers not supporting backdrop-filter*/
+    color: white;
+}
+
+    .mlink:hover {
+        background-color: rgba(0, 0, 0, .5);
+        color: white;
+    }
+
+
+@supports ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
+    nav {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
+
+    .mlink {
+        background: rgba(0, 0, 0, .15);
+    }
+}
 
 .is-pinned {
     background: rgba(255, 255, 255, .86);
@@ -96,110 +102,23 @@ nav {
         color: black;
     }
 
+        .is-pinned .mlink:hover {
+            background: rgba(0, 0, 0, .17);
+        }
+
     .is-pinned nav {
         box-shadow: none;
     }
 
     .is-pinned .sel {
-        background: #00000042;
+        background: rgb(0, 0, 0, .26);
         color: white;
-    }
-
-.mlink {
-    text-decoration: none;
-    padding: 20px 20px;
-    letter-spacing: 2px;
-    display: block;
-    text-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-    transition: background .3s;
-    font-weight: bold;
-    background: rgba(0, 0, 0, .7);
-    color: white;
-}
-
-    .mlink:hover {
-        background-color: rgba(0, 0, 0, .5);
-        color: white;
-    }
-
-.footer {
-    font-size: 15px;
-    color: #ddd;
-}
-
-@supports ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))) {
-    nav {
-        -webkit-backdrop-filter: blur(4px);
-        backdrop-filter: blur(4px);
-    }
-
-    .mlink {
-        background: rgb(0, 0, 0, .15);
-    }
-}
-
-
-.main_wrapper {
-    width: 80%;
-    max-width: 1000px;
-    margin: 2em auto;
-    letter-spacing: .6px;
-    margin-top: 136px;
-}
-
-.main_container {
-    background: transparent;
-    box-sizing: border-box;
-    padding: 8px;
-    line-height: 140%;
-    font-size: 17px;
-    color: #efefef;
-    display: grid;
-    grid-template-columns: 48% 48%;
-    column-gap: 4%;
-    grid-row-gap: -30px;
-    text-align: justify;
-    /*border: 1px solid white;*/
-    /*box-shadow: 2px 2px 12px rgba(0,0,0,.72);*/
-    align-items: center;
-}
-
-.main_container .img-container{
-    width:100%;
-    display: flex;
-    justify-content: center;
-}
-    .main_container img {
-        max-width: 100%;
-        box-shadow: 0 0 9px 2px black;
-    }
-
-.sec_content {
-    margin: -40px 0;
-}
-
-    .sec_content:first-of-type {
-        margin-top: 0;
-    }
-
-.mhref {
-    color: #9c9595;
-}
-
-    .mhref:active {
-        color: #211c1c;
-    }
-
-    .mhref:visited {
-        color: #8a8383;
     }
 
 .menu-button {
     padding: 5px;
-    display: table-cell;
-    border-radius: 100px;
+    border-radius: 2px;
     display: none;
-    position: relative;
     margin-right: 20px;
     transition: .3s;
 }
@@ -214,8 +133,8 @@ nav {
     }
 
 .menu-open-button {
-    background: rgb(255, 255, 255, .84);
-    box-shadow: 0 0 6px 1px rgb(0, 0, 0, .28%);
+    background: rgba(255, 255, 255, .84);
+    box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, .34);
 }
 
 .is-pinned .menu-open-button {
@@ -276,19 +195,81 @@ nav {
 
 
 
+.main-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    margin: 2em auto;
+    letter-spacing: .6px;
+    margin-top: 136px;
+}
+
+
+
+.main-container {
+    padding: 8px;
+    line-height: 140%;
+    font-size: 17px;
+    color: #d0d0d0;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 30px;
+    text-align: justify;
+    align-items: center;
+}
+
+    .main-container .img-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-container img {
+        max-width: 100%;
+        box-shadow: 0 0 9px 2px black;
+    }
+
+
+.glow1 {
+    color: #9bc7d4;
+    text-shadow: 0 0 8px rgba(126, 198, 220, .9);
+}
+
+.glow2 {
+    color: #cea4ea;
+    text-shadow: 0 0 12px rgba(188, 124, 232, .9);
+}
+
+.mhref {
+    color: #9c9595;
+}
+
+    .mhref:active {
+        color: #211c1c;
+    }
+
+    .mhref:visited {
+        color: #8a8383;
+    }
+
+.footer {
+    font-size: 15px;
+    color: #ddd;
+}
+
 @media screen and (max-width: 900px) {
 
     .menu-button {
-        display: table-cell;
+        display: block;
     }
 
     nav {
         flex-direction: column;
         width: 100%;
         text-align: center;
+        box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, .1) !important;
     }
 
-    .nav-wrapper2 {
+    .nav-inner-wrapper {
         width: 100%;
         height: 0;
         background: white;
@@ -301,23 +282,30 @@ nav {
 
     .mlink {
         padding: 15px 10px;
+        background: transparent;
         color: black;
     }
-}
 
+    nav .sel {
+        background: rgba(0, 0, 0, .26);
+        color: white;
+    }
 
-.is_open {
-    height: 100%;
-    padding-top: 30px;
-}
-
-@media screen and (max-width: 800px) {
-    .main_container {
-        display:block;
+    .nav-is-open {
+        height: 100%;
+        padding-top: 30px;
     }
 }
+
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 600px) {
-    .main_wrapper {
+    .main-wrapper {
         width: 95%;
     }
 }
@@ -327,6 +315,7 @@ nav {
     .logo {
         display: flex;
         justify-content: center;
+        filter: contrast(1.5);
     }
 
         .logo img {

@@ -22,10 +22,10 @@ function onBodyLoad() {
 }
 
 function open_mobile_nav() {
-    const el = document.getElementsByClassName("nav-wrapper2")[0];
-    el.classList.add("is_open");
+    const el = document.getElementsByClassName("nav-inner-wrapper")[0];
+    el.classList.add("nav-is-open");
 }
 function close_mobile_nav() {
-    const el = document.getElementsByClassName("nav-wrapper2")[0];
-    el.classList.remove("is_open");
+    const el = document.getElementsByClassName("nav-inner-wrapper")[0];
+    el.classList.remove("nav-is-open");
 }
