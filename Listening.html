@@ -17,131 +17,59 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/projects.css">
 
     <title>Überton &middot; Listening</title>
-    
+
     <script>// prevent css transitions on start</script>
     <script src="js/main.js"></script>
 
-    <style>
-        .proj-section {
-            background-color: rgb(0, 0, 0, 0.2);
-            margin: 30px;
-            padding: 15px 30px;
-            text-align: left;
-            display: flex;
-            font-size: 90%;
-        }
-
-        .proj-section-col {
-            margin: 20px;
-        }
-
-            .proj-section-col img {
-                width: 100%;
-                box-shadow: 1px 1px 7px rgba(17, 16, 25, .74);
-            }
-
-            .proj-section-col:nth-child(1) {
-                flex-basis: 40%;
-                flex-shrink: 1;
-            }
-
-            .proj-section-col:nth-child(2) {
-                flex-basis: 60%;
-                flex-shrink: 1.3;
-            }
-
-        .audioplayer {
-            width: 400px;
-            max-width: 100%;
-        }
-
-        .proj-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .newplayer {
-            background: black;
-        }
-
-        @media screen and (max-width:800px) {
-
-            .proj-section {
-                flex-direction: column;
-            }
-
-            .proj-section-col:nth-child(1) {
-                flex: 1 1 auto;
-            }
-
-            .proj-section-col:nth-child(2) {
-                flex: 1 1 auto;
-            }
-        }
-
-        .proj-section-col:nth-child(1) {
-            margin-bottom: 0;
-        }
-
-        @media screen and (max-width:660px) {
-
-            .proj-section {
-                margin: 15px;
-                padding: 8px;
-            }
-        }
-
-        @media screen and (max-width:380px) {
-
-            .proj-section {
-                margin: 8px;
-                padding: 8px;
-            }
-        }
-
-        @media screen and (max-width:330px) {
-
-            .proj-section-col {
-                margin: 8px 8px;
-            }
-        }
-    </style>
 </head>
 
 
+
 <body onload="onBodyLoad()">
+    <div class="banner"></div>
     <div class="header-spacer"></div>
+
     <div class="header">
         <div class="logo">
-            <img src="media/img/Logo_Gray_Transparent_1200x500.png">
+            <img src="media/img/logo.png">
         </div>
     </div>
+
     <div class="nav-wrapper">
-        <nav>
-            <a class="mlink" href="javascript:void(0)">Home</a>
-            <a class="mlink sel" href="Listening">Listening</a>
-            <a class="mlink" href="Downloads">Downloads</a>
-            <a class="mlink" href="Developer">Developer</a>
-            <a class="mlink" href="Contact">Contact</a>
-        </nav>
+        <div class="menu-button menu-open-button" onclick="open_mobile_nav()">
+            <span></span>
+        </div>
+
+        <div class="nav-inner-wrapper">
+            <div class="menu-button menu-close-button" onclick="close_mobile_nav()">
+                <span></span>
+            </div>
+            <nav>
+                <a class="mlink" href="./">Home</a>
+                <a class="mlink sel" href="javascript:void(0)">Listening</a>
+                <a class="mlink" href="Downloads">Downloads</a>
+                <a class="mlink" href="Developer">Developer</a>
+                <a class="mlink" href="Contact">Contact</a>
+            </nav>
+        </div>
     </div>
-    <div class="banner"></div>
 
-
-    <div class="main_wrapper">
-        <div class="main_container">
+    <div class="main-wrapper">
+        <div class="main-container">
 
             <p>
                 <b>Projects using Überton</b>
             </p>
-            <div class="proj-section">
-                <div class="proj-section-col">
 
+            <div class="proj-section">
+
+                <div class="proj-section-col">
                     <img src="media/img/raum_et_ude_preview.jpg" />
                 </div>
+
                 <div class="proj-section-col">
                     <p class="proj-title">
                         Raum et ude

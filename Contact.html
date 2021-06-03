@@ -24,27 +24,38 @@
     <script src="js/main.js"></script>
 </head>
 
+
 <body onload="onBodyLoad()">
+    <div class="banner"></div>
     <div class="header-spacer"></div>
+
     <div class="header">
         <div class="logo">
-            <img src="media/img/Logo_Gray_Transparent_1200x500.png">
+            <img src="media/img/logo.png">
         </div>
     </div>
+
     <div class="nav-wrapper">
-        <nav>
-            <a class="mlink" href="./">Home</a>
-            <a class="mlink" href="Listening">Listening</a>
-            <a class="mlink" href="Downloads">Downloads</a>
-            <a class="mlink" href="Developer">Developer</a>
-            <a class="mlink sel" href="javascript:void(0)">Contact</a>
-        </nav>
+        <div class="menu-button menu-open-button" onclick="open_mobile_nav()">
+            <span></span>
+        </div>
+
+        <div class="nav-inner-wrapper">
+            <div class="menu-button menu-close-button" onclick="close_mobile_nav()">
+                <span></span>
+            </div>
+            <nav>
+                <a class="mlink" href="./">Home</a>
+                <a class="mlink" href="Listening">Listening</a>
+                <a class="mlink" href="Downloads">Downloads</a>
+                <a class="mlink" href="Developer">Developer</a>
+                <a class="mlink sel" href="javascript:void(0)">Contact</a>
+            </nav>
+        </div>
     </div>
-    <div class="banner"></div>
 
-
-    <div class="main_wrapper">
-        <div class="main_container">
+    <div class="main-wrapper">
+        <div class="main-container">
 
             <p>
                 <b>Contact</b>
