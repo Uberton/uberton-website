@@ -111,7 +111,7 @@ nav {
     }
 
     .is-pinned .sel {
-        background: rgb(0, 0, 0, .26);
+        background: rgba(0, 0, 0, .26);
         color: white;
     }
 

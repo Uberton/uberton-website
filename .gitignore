@@ -1,2 +1,6 @@
 
 .vs/
+
+*.psd
+
+slnx.sqlite
