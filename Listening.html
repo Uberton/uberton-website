@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Listening examples of the Überton VST plugin project">
+    <meta name="author" content="Überton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/projects.css">
+
+    <title>Überton &middot; Listening</title>
+
+    <script>// prevent css transitions on start</script>
+    <script src="js/main.js"></script>
+
+</head>
+
+
+
+<body onload="onBodyLoad()">
+    <div class="banner"></div>
+    <div class="header-spacer"></div>
+
+    <div class="header">
+        <div class="logo">
+            <img src="media/img/logo.png">
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+        <div class="menu-button menu-open-button" onclick="open_mobile_nav()">
+            <span></span>
+        </div>
+
+        <div class="nav-inner-wrapper">
+            <div class="menu-button menu-close-button" onclick="close_mobile_nav()">
+                <span></span>
+            </div>
+            <nav>
+                <a class="mlink" href="./">Home</a>
+                <a class="mlink sel" href="javascript:void(0)">Listening</a>
+                <a class="mlink" href="Downloads">Downloads</a>
+                <a class="mlink" href="Developer">Developer</a>
+                <a class="mlink" href="Contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="main-container">
+
+            <p>
+                <b>Projects using Überton</b>
+            </p>
+
+            <div class="proj-section">
+
+                <div class="proj-section-col">
+                    <img src="media/img/raum_et_ude_preview.jpg" />
+                </div>
+
+                <div class="proj-section-col">
+                    <p class="proj-title">
+                        Raum et ude
+                    </p>
+                    <p>
+                        This composition has been developed by participants of the academy course "Co(s)mic Sounds".
+                    </p>
+                    <p>
+                        A virtual space is explored with sounds and instruments and sometimes extended into dimensions higher
+                        than three through virtual effects and instruments.
+                    </p>
+                    <p>
+                        Read the booklet for more information (German only).
+                    </p>
+                    <!--<div class="newplayer">
+                        <button>Play</button>
+                        <button>Pause</button>
+                    </div>-->
+                    <audio class="audioplayer" controls>
+                        <source src="media/audio/raum_et_ude.mp3" type="audio/mp3" />
+                        Your browser doesn't support playing this audio file.
+                    </audio>
+                    <br />
+                    <a class="mhref" href="media/pdf/Programmheft_raum_et_ude.pdf" download="Programmheft_raum_et_ude.pdf">Download Booklet</a>
+                    <br />
+                    <a class="mhref" href="media/audio/raum_et_ude.mp3" download="raum_et_ude.mp3">Download Audio</a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <p>
+                © Überton 2021
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

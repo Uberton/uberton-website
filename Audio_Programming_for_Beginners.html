@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Short guide to audio programming">
+    <meta name="author" content="Überton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/main_developer.css">
+    <link rel="stylesheet" href="css/documentation.css">
+
+    <title>Überton Dev &middot; Audio programming for beginners</title>
+
+    <script>// prevent css transitions on start</script>
+    <style>
+        .math {
+            font-family: Georgia, Times, Times New Roman, serif;
+            font-weight: 200;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+	<img src="media/img/Logo_Gray_Transparent_1200x500.png">
+    </div>
+    <nav>
+        <a class="mlink" href="./">Home</a>
+        <a class="mlink" href="javascript:void(0)">Downloads</a>
+        <a class="mlink sel" href="Developer">Developer</a>
+        <a class="mlink" href="https://github.com/Uberton/Uberton" target="_blank">Source Code</a>
+    </nav>
+
+
+
+    <div class="main_container docs_mc">
+        <div class="mc_header">
+            <h1>
+                Audio programming for beginners
+            </h1>
+        </div>
+        <div class="mc_content">
+            <p>
+                Sound is just an oscillation of some medium like air or a body. For example the membrane of a speaker
+                vibrates because of a magnetic field resulting from a current through the driver coil. This sets the surrounding
+                air into motion. The wiggling is then carried through the air and for example makes your eardrums vibrate.
+                Audio waves need to oscillate at a frequency from 20 Hz to 20 kHz to be audible to the human being.
+            </p>
+            <p>
+                The oscillation of the medium is a function of time <span class="math"><i>f</i>&#8201;(<i>t</i>)</span> in
+                the mathematical sense. For audio processing, this function needs to be recorded - i.e. with a microphone.
+                It converts the air vibrations into oscillations of an electrical voltage which again is somehow stored on a 
+                magnetic band or similar. This would be the analog way and it does not need to care too much on resolution.
+                But to store the signal digitally, it needs to be <b>sampled</b>. While the real representation of the signal 
+                has practically infinite resolution, the hard drive of a computer only has finite storage. Therefore, the signal 
+                is stored with a certain resolution which is called the <b>sample rate</b>. Common values are i.e. 44100 Hz or 
+                48000 Hz, meaning that per 1 second of audio material 44100 values are stored. 
+            </p>
+            <p>
+                This (now <b>discrete</b>) signal can be stored in an array structure. Each value is called one <b>sample</b> of 
+                the signal. 
+            </p>
+            <p>
+                When playing the audio from the disc to the computer speakers, the data needs to be read and then fed (often 
+                through the OS) to the audio driver (we will not care about the audio driver itself here). This needs to be done
+                in <b>realtime</b> meaning that once we started playing the audio file, we need to send a constant stream of data
+                which cannot be interrupted as this would result in an <b>audio dropout</b>. 
+            </p>
+            <p>
+                <span style="color:red">
+                    The first rule of audio programming is, that ONE MUST NOT CAUSE AN AUDIO DROPOUT!
+                </span>
+            </p>
+            <p>
+                Unlike in visuals (no one ever notices one or even a few frames drop in a game), each SINGLE sample is important. 
+                This is partly because the speaker membrane follows the signal and as suddenly as possible moves to the undefined 
+                value of the dropped sample. This causes a loud crack which can damage the speakers as well as the hearing of the 
+                present people. 
+            </p>
+            <p>
+                The audio info needs to be transmitted through several interfaces in a computer to be played back. To invoke all 
+                callbacks for each single sample is highly inefficient and therefore several samples are bundled up in a <b>buffer
+                </b> of i.e. 64-1024 samples. Each processing station can process all samples in the buffer at once and pass it on
+                to the next station. The buffer should not be chosen too large though because this creates a <b>latency</b>. For
+                1024 samples per buffer this might be 1024/44100 Hz = 0,023 s = 23 ms. This is ok for playing back and even producing 
+                or mixing music but probably too slow for i.e. a guitar amp simulation that's played in realtime. The time until 
+                the first buffer (and all next buffers) is ready and played to the musician is noticably delayed compared to the 
+                playing of the note on the guitar. All in all, a balance has to be found. The average plugin developer does not need
+                to worry too much about this, because the host DAW should deal with these issues mostly. Just keep in mind that 
+                there is a buffer and that it has a certain size which might change. 
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

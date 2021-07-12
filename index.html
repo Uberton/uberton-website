@@ -1,125 +1,106 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Überton &middot; Home</title>
+
+    <meta name="description" content="Main page of the Überton VST plugin project">
+    <meta name="author" content="Überton">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 1200px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
+    <link rel="stylesheet" href="css/main.css">
 
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
+    <title>Überton &middot; Home</title>
 
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-    </style>
-    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <script>// prevent css transitions on start</script>
+    <script src="js/main.js"></script>
+</head>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
+<body onload="onBodyLoad()">
+    <div class="banner"></div>
+    <div class="header-spacer"></div>
 
-    <!-- Fav and touch icons -->
+    <div class="header">
+        <div class="logo">
+            <img src="media/img/logo.png">
+        </div>
+    </div>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="../assets/ico/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../assets/ico/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../assets/ico/favicon-16x16.png">
-	<link rel="manifest" href="../assets/ico/site.webmanifest">
-	<link rel="mask-icon" href="../assets/ico/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-  </head>
+    <div class="nav-wrapper">
+        <div class="menu-button menu-open-button" onclick="open_mobile_nav()">
+            <span></span>
+        </div>
 
-  <body>
+        <div class="nav-inner-wrapper">
+            <div class="menu-button menu-close-button" onclick="close_mobile_nav()">
+                <span></span>
+            </div>
+            <nav>
+                <a class="mlink sel" href="javascript:void(0)">Home</a>
+                <a class="mlink" href="Listening">Listening</a>
+                <a class="mlink" href="Downloads">Downloads</a>
+                <a class="mlink" href="Developer">Developer</a>
+                <a class="mlink" href="Contact">Contact</a>
+            </nav>
+        </div>
+    </div>
 
-    <div class="container-narrow">
+    <div class="main-wrapper">
+        <div class="main-container">
 
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-		  <li><a href="#">Listening</a></li>
-          <li><a href="#">Downloads</a></li>
-		  <li><a href="#">Documentation</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="muted">Project name</h3>
-      </div>
+            <div>
+                <p class="glow1">
+                    How would a different universe sound?
+                </p>
+                <p>
+                    The Überton Project aims to develop ready-to-use open-source audio plugins (VST&reg;) for instruments and sound effects based on concepts of theoretical physics.
+                </p>
+                <p>
+                    In the virtual space we want to hear real sounds that are inaccessable by real instruments.
+                </p>
+                <div class="img-container">
+                    <img src="media/img/tesseract_snapshot.png" />
+                </div>
+            </div>
 
-      <hr>
+            <div>
+                <p class="glow2">
+                    Sounds of the macro- and microcosmos
+                </p>
+                <p>
+                    For example, n-dimensional vibrating bodies (such as bells or drums), sound propagation and echoing in n-dimensional rooms - or near a black hole - as well as vibrating strings (like a harp) so small that quantum effects enter as source of natural randomness.
+                </p>
+                <p>
+                    The Überton project initially started with a academy course "Co(s)mic Sounds" and the first plugin was developed by J. Kipping, K. Levi, S. Lentner. The current development is supported by the Young Academy of Science and the University of Hamburg.
+                </p>
+            </div>
 
-      <div class="jumbotron">
-        <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 600px;" src="assets/img/Logo_White_Transparent_1200x500.png">
-        <p class="lead">The Überton Project aims to develop ready-to-use open-source audio plugins (VST) for instruments and sound effects based on concepts of theoretical physics.<br>
-		<br>
-		In the virtual space we want to hear real sounds that are inaccessable by real instruments.<br>
-		<br>
-		For example, n-dimensional vibrating bodies (like bell or drum), sound propagation and echoing in n-dimensional rooms or near a black holes, 
-			and vibrating strings (like a harp) so small that quantum effects enter as source of natural randomness.<br>
-		<br>
-		The Überton project initially started with a academy course "Co(s)mical Sounds" and the first plugin was developed by J. Kipping, K. Levi, S. Lentner. The current development is supported by the Young Academy of Science and the University of Hamburg.<br>
-		<br>
-		Our main goal is to also use the newly built instruments in creative expressions and art. In the academy course, the participants developed and performed a first experimental composition "Raum et ude". The audio file and the program booklet can be downloaded here:<br>
-        <br>
-		<a class="btn btn-large btn-success" href="#">Plugins</a>
-		<a class="btn btn-large btn-success" href="#">Listen</a>
-      </div>
+            <div>
+                <p>
+                    Our main goal is to also use the newly built instruments in creative expressions and art. In the academy course, the participants developed and performed a first experimental composition "Raum et ude". The audio file and the program booklet can be downloaded <a class="mhref" href="Listening">here</a>:
+                </p>
+            </div>
 
-      <div class="footer">
-        <p>&copy; Überton 2021</p>
-      </div>
+            <div class="img-container">
+                <img src="media/img/VST_Compatible_Logo_Steinberg_with_TM.png" width=180 />
+                <!--<p><a href="Downloads" class="jumpbutton">Plugins</a><a href="Listening" class="jumpbutton">Listen</a></p>-->
+            </div>
 
-    </div> <!-- /container -->
+        </div>
+        <div class="footer">
+            <p>
+                © Überton 2021
+            </p>
+        </div>
+    </div>
+</body>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
-
-  </body>
 </html>

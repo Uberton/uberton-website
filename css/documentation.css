@@ -1,0 +1,53 @@
+body {
+    background: rgb(249, 249, 249);
+}
+
+.docs_mc {
+    background: rgb(253, 253, 253);
+    color: #353535;
+    padding: 0;
+}
+
+.mc_header {
+    background: rgb(28, 21, 50);
+    color: white;
+    padding: 1em 2em;
+}
+
+.mc_content {
+    padding: 1em 2em;
+}
+
+.code {
+    overflow: auto;
+    background-color: rgb(245, 245, 245);
+    padding: 10px 13px;
+    max-height: 300px;
+    border-radius: 3px;
+    font-size: 93%;
+    font-family: monospace;
+}
+
+.inlcode {
+    overflow: auto;
+    background-color: rgb(235, 235, 235);
+    padding: 2px 2px;
+    max-height: 300px;
+    border-radius: 3px;
+    font-size: 93%;
+    font-family: monospace;
+    overflow-wrap: break-word;
+}
+
+
+@media screen and (max-width: 550px) {
+    .mc_content {
+        padding: 1em 1.4em;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .mc_content {
+        padding: 1em 1em;
+    }
+}
