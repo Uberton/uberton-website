@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Installation manual for the Überton VST plugin project">
+    <meta name="author" content="Überton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../ico/favicon-16x16.png">
+    <link rel="manifest" href="../ico/site.webmanifest">
+    <link rel="mask-icon" href="../ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../css/main_developer.css">
+    <link rel="stylesheet" href="../css/documentation.css">
+
+    <title>Überton Dev &middot; Installation and Setup</title>
+
+    <script>// prevent css transitions on start</script>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="../media/img/Logo_Gray_Transparent_1200x500.png">
+    </div>
+    <nav>
+        <a href=".././">Home</a>
+        <a href="../Plugins">Plugins</a>
+        <a class="sel" href="../Developer">Developer</a>
+        <a href="https://github.com/Uberton/Uberton" target="_blank">Source Code</a>
+    </nav>
+
+
+
+    <div class="main-wrapper">
+        <header>
+            <h1>
+                Installation and Setup
+            </h1>
+        </header>
+        <main>
+            <p>
+                First, you will need to set up the VST SDK from Steinberg. See the Steinberg
+                <a href="https://developer.steinberg.help/display/VST/How+to+set+up+my+system+for+VST+3"
+                   target="_blank">installation documentation</a> but before generating the projects using CMake,
+                finish reading this document.
+            </p>
+            <p>
+                Download or clone the Überton project and place it so that the Überton folder is in the same folder
+                as <span class="inlcode">VST_SDK</span> (which again should contain the VST library folder <span class="inlcode">vst3sdk</span>).
+                To add the Überton library to the build process and the IDE project, you need to add the lines
+                <pre class="code">
+# Add Uberton library
+set(UBERTON_SRC_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../Uberton")
+set(UBERTON_BIN_PATH "${UBERTON_SRC_PATH}/build")
+
+# Add Uberton Folder 
+if(EXISTS ${UBERTON_SRC_PATH})
+    add_subdirectory(${UBERTON_SRC_PATH} ${UBERTON_BIN_PATH})
+endif()
+</pre>
+                to end of the <span class="inlcode">CMakeLists.txt</span> file found in the <span class="inlcode">vst3sdk</span> folder.
+            </p>
+            <p>
+                Next, configure cmake for the <span class="inlcode">vst3sdk</span> folder in VST_SDK
+            </p>
+            <p>
+                For windows users, there occurs a little problem. When compiling the example plugins later,
+                the output <span class="inlcode">.vst3</span> plugin is compiled to the Debug or Release folder. Your
+                audio software will not find it there and that is why the build process attempts to create symbolic
+                links in the <span class="inlcode">C:\Program Files\Common Files\VST3</span> folder. This should be the
+                solution except that it isn't because the permission to create symbolic links is not granted by default
+                on windows.
+            </p>
+            <p>
+                There are several (half) solutions:
+                <ul>
+                    <li>Run Visual Studio as Administrator (which is the easiest solution).</li>
+                    <li>
+                        This <a href="https://developer.steinberg.help/display/VST/Preparation+on+Windows"
+                                target="_blank">hint</a> in the Steinberg documentation also solves this problem, BUT:
+                        it if your user account is the administrator. So if you have only one user account on your local
+                        pc, then it is probably the administrator and for windows-specific reasons it seems you can never
+                        get this to work.
+                    </li>
+                    <li>
+                        Instead, you can just remove the command to create the symbolic link by deselecting the option
+                        <span class="inlcode">SMTG_CREATE_PLUGIN_LINK</span> before generating the project files
+                        with cmake. But then you either need to add the Debug or Release folder to the scan locations in your
+                        DAW or manually copy the plugins into <span class="inlcode">C:\Program Files\Common Files\VST3</span>
+                        each time you recompile
+                        or create the symbolic links by hand. To do that you need to run the console (cmd) as admin (!) and navigate to
+                        the VST3 folder and type
+                        <br />
+                        <br />
+                        <span class=inlcode>
+                            C:\Program Files\Common Files\VST3> mklink ThePluginName.vst3
+                            C:\Users\Me\VST_SDK\VST3_SDK\build\VST3\Release\ThePluginName.vst3
+                        </span>
+                        <br />
+                        <br />
+                        (and of course replace the plugin name and your sdk location).
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                For Mac users:
+            </p>
+            <p>
+                Best use XCode. Unfortunately, there seems to be a bug in the cmake files. You'll might get an error
+                that your XCode
+                version is too old and that you need V9 or greater, even if you have Version 11 (latest version at the
+                time of this writing): "XCode 9 or newer is required" Funny. Maybe the version comparion fails because
+                the version is compared as string?? Anyway, you can just go to
+                <span class="inlcode">VST3_SDK/cmake/modules/SMTG_DetectPlatform.cmake</span>
+                and comment out the lines that say
+                <pre class="code">
+if(XCODE_VERSION VERSION_LESS "9")
+    message(FATAL_ERROR "XCode 9 or newer is required")
+endif()</pre>
+                Note: this is not the solution if you are using XCode 8 or less! ;)
+            </p>
+
+
+        </main>
+    </div>
+</body>
+
+</html>

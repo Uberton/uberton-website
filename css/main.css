@@ -56,7 +56,7 @@ nav {
         background: rgba(255, 255, 255, .6);
     }
 
-.mlink {
+nav a {
     text-decoration: none;
     padding: 20px 20px;
     letter-spacing: 2px;
@@ -68,7 +68,7 @@ nav {
     color: white;
 }
 
-    .mlink:hover {
+    nav a:hover {
         background-color: rgba(0, 0, 0, .5);
         color: white;
     }
@@ -79,7 +79,7 @@ nav {
         backdrop-filter: blur(4px);
     }
 
-    .mlink {
+    nav a {
         background: rgba(0, 0, 0, .15);
     }
 }
@@ -88,12 +88,12 @@ nav {
     background: rgba(255, 255, 255, .86);
 }
 
-    .is-pinned .mlink {
+    .is-pinned nav a {
         background: transparent;
         color: black;
     }
 
-        .is-pinned .mlink:hover {
+        .is-pinned nav a:hover {
             background: rgba(0, 0, 0, .17);
         }
 
@@ -190,7 +190,7 @@ nav {
     margin-top: 136px;
 }
 
-.main-container {
+main {
     padding: 8px;
     line-height: 140%;
     font-size: 16px;
@@ -200,7 +200,7 @@ nav {
     margin-bottom: 6rem;
 }
 
-    .main-container .img-container {
+    main .img-container {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -217,7 +217,7 @@ nav {
     column-gap: 30px;
 }
 
-.main-container .sub-heading {
+main .sub-heading {
     font-size: 17px;
 }
 
@@ -243,7 +243,7 @@ nav {
         color: #8a8383;
     }
 
-.footer {
+footer {
     font-size: 13px;
     color: #ddd;
 }
@@ -271,7 +271,7 @@ nav {
         left: 0;
     }
 
-    .mlink {
+    nav a {
         padding: 15px 10px;
         background: transparent;
         color: black;
@@ -289,7 +289,7 @@ nav {
 }
 
 @media screen and (max-width: 800px) {
-    .main-container {
+    .two_col_container {
         display: block;
     }
 }
