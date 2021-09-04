@@ -110,6 +110,17 @@ main {
     padding: 1em 2em;
 }
 
+h2 {
+    position: relative;
+    margin-block-start: 1.5em;
+    line-height: 2rem;
+}
+
+    h2 a {
+        position: absolute;
+        top: -50px;
+    }
+
 
 
 
@@ -132,6 +143,16 @@ main {
     font-size: 93%;
     font-family: monospace;
     overflow-wrap: break-word;
+}
+
+.for-windows {
+    background: #a09dc347;
+    padding: 1px 12px;
+}
+
+.for-mac {
+    background: #a09dc347;
+    padding: 1px 12px;
 }
 
 @media screen and (max-width: 650px) {
@@ -160,6 +181,13 @@ main {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .main-wrapper {
+        text-align: left;
+    }
+}
+
 
 @media screen and (max-width: 370px) {
     .mc_content {
