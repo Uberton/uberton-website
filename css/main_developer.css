@@ -29,6 +29,8 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     background: linear-gradient(88deg, black, transparent);
+    font-family: sans-serif;
+
     /*background: linear-gradient(88deg, black, #1337489e);*/
 }
 
