@@ -261,6 +261,10 @@ h2 {
     color: #9c9595;
 }
 
+    .mhref:hover {
+        color: #bdb6b6;
+    }
+
     .mhref:active {
         color: #211c1c;
     }
