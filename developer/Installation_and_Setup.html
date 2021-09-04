@@ -18,10 +18,12 @@
 
     <link rel="stylesheet" href="../css/main_developer.css">
     <link rel="stylesheet" href="../css/documentation.css">
+    <link rel="stylesheet" href="../css/prism.css">
 
     <title>Überton Dev &middot; Installation and Setup</title>
 
     <script>// prevent css transitions on start</script>
+    <script src="../js/prism.js"></script>
 </head>
 
 <body>
@@ -54,8 +56,7 @@
                 Download or clone the Überton project and place it so that the Überton folder is in the same folder
                 as <span class="inlcode">VST_SDK</span> (which again should contain the VST library folder <span class="inlcode">vst3sdk</span>).
                 To add the Überton library to the build process and the IDE project, you need to add the lines
-                <pre class="code">
-# Add Uberton library
+                <pre><code class="language-cmake"># Add Uberton library
 set(UBERTON_SRC_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../Uberton")
 set(UBERTON_BIN_PATH "${UBERTON_SRC_PATH}/build")
 
@@ -63,7 +64,7 @@ set(UBERTON_BIN_PATH "${UBERTON_SRC_PATH}/build")
 if(EXISTS ${UBERTON_SRC_PATH})
     add_subdirectory(${UBERTON_SRC_PATH} ${UBERTON_BIN_PATH})
 endif()
-</pre>
+</code></pre>
                 to end of the <span class="inlcode">CMakeLists.txt</span> file found in the <span class="inlcode">vst3sdk</span> folder.
             </p>
             <p>
@@ -120,10 +121,10 @@ endif()
                 the version is compared as string?? Anyway, you can just go to
                 <span class="inlcode">VST3_SDK/cmake/modules/SMTG_DetectPlatform.cmake</span>
                 and comment out the lines that say
-                <pre class="code">
-if(XCODE_VERSION VERSION_LESS "9")
+                <pre><code class="language-cmake">if(XCODE_VERSION VERSION_LESS "9")
     message(FATAL_ERROR "XCode 9 or newer is required")
-endif()</pre>
+endif()
+</code></pre>
                 Note: this is not the solution if you are using XCode 8 or less! ;)
             </p>
 
