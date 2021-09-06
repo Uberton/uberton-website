@@ -23,41 +23,7 @@
 
     <script>// prevent css transitions on start</script>
     <script src="../js/main.js"></script>
-    <script>
-        function onDownloadClick() {
-            let el = document.getElementById("the-download-wrapper");
-            if (el.style.display == "block") {
-                el.style.display = "none";
-            } else {
-                el.style.display = "block";
-            }
-        }
-
-        function openInstallationWin() {
-            let wrapper = document.getElementById("install");
-            let win = document.getElementById("win-install");
-            let mac = document.getElementById("mac-install");
-            win.style.display = block;
-            mac.style.display = none;
-            wrapper.style.maxHeight = "1000px";
-        }
-        function openInstallationMac() {
-            let wrapper = document.getElementById("install");
-            let win = document.getElementById("win-install");
-            let mac = document.getElementById("mac-install");
-            win.style.display = block;
-            mac.style.display = none;
-            wrapper.style.maxHeight = "1000px";
-        }
-        function openInstallation(type) {
-            let wrapper = document.getElementById("install");
-            let win = document.getElementById("win-install");
-            let mac = document.getElementById("mac-install");
-            (type == "Win" ? win : mac).style.display = "block";
-            (type == "Win" ? mac : win).style.display = "none";
-            wrapper.style.display = "block";
-        }
-    </script>
+    <script src="../js/plugins.js"></script>
 </head>
 
 <body onload="onBodyLoad()">
@@ -98,7 +64,7 @@
                 <div class=plugin-main-inner>
 
                     <div class="img-container">
-                        <a href="plugins/Tesseract"><img src="../media/img/tesseract_sc.jpg" width=500 /></a>
+                        <img src="../media/img/tesseract_sc.jpg" width=500 />
                     </div>
                     <div class="plugin-text">
                         <div class="plugin-longdescription">
@@ -122,7 +88,7 @@
                             </p>
                             <hr>
                             <div class="plugin-links">
-                                <a href="javascript:void(0)" onclick="onDownloadClick()">Download Plugin</a> <a href="Tesseract/Tesseract_User_Guide.pdf">
+                                <a href="javascript:void(0)" onclick="onDownloadClick()">Download Plugin</a> <a href="TesseractFx/User_Guide/Tesseract User Guide.pdf">
                                     User
                                     Guide
                                 </a>
@@ -141,7 +107,7 @@
                                         <p>
                                             Your plugin is being downloaded...
                                             <br />
-                                            After the download has finished, run the installer to install your plugin. 
+                                            After the download has finished, run the installer to install your plugin.
                                             <!--After downloading the plugin, extract the bundle to <span class="path">C:/Program Files/Common Files/VST3</span>.-->
                                         </p>
                                     </div>
