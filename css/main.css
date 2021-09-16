@@ -257,20 +257,35 @@ h2 {
     font-weight: normal;
 }
 
-.mhref {
+a.mhref {
     color: #9c9595;
+    transition: background-color .3s,color .3s;
 }
 
-    .mhref:hover {
-        color: #bdb6b6;
-    }
-
-    .mhref:active {
+    a.mhref:active {
         color: #211c1c;
     }
 
-    .mhref:visited {
+    a.mhref:visited {
         color: #8a8383;
+    }
+
+    a.mhref:hover {
+        color: #bdb6b6;
+        background-color: rgba(255, 255, 255, 0.11);
+    }
+
+.mhref-isolated {
+    padding: 5px;
+    text-decoration: none;
+    background: rgba(59, 85, 97, .25);
+    box-shadow: 1px 2px 20px 1px black;
+    color: #cccccc !important;
+}
+
+    .mhref-isolated:hover {
+        background-color: rgb(255, 255, 255, 0.11);
+        box-shadow: 1px 2px 20px 11px black;
     }
 
 footer {
