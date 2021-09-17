@@ -213,17 +213,18 @@ main {
     margin-bottom: 6rem;
 }
 
-    main .img-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-.img-container img {
-    max-width: 100%;
-    box-shadow: 0 0 9px 2px black;
-    image-rendering: -webkit-optimize-contrast;
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+    .img-container img {
+        max-width: 100%;
+        box-shadow: 0 0 9px 2px black;
+        image-rendering: -webkit-optimize-contrast;
+    }
 
 .two_col_container {
     display: grid;
