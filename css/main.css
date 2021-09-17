@@ -50,8 +50,12 @@ body {
 
 .nav-wrapper {
     width: 100%;
+    position: -webkit-sticky;
     position: sticky;
     top: -1px;
+}
+
+.nav-wrapper-flex {
     display: flex;
     justify-content: flex-end;
 }
@@ -224,6 +228,7 @@ main {
         max-width: 100%;
         box-shadow: 0 0 9px 2px black;
         image-rendering: -webkit-optimize-contrast;
+        align-items: flex-start;
     }
 
 .two_col_container {
@@ -330,6 +335,10 @@ footer {
 @media screen and (max-width: 900px) {
     .menu-button {
         display: block;
+    }
+
+    .menu-open-button {
+        margin-bottom: 0;
     }
 
     nav {
