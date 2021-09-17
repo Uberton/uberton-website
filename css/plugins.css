@@ -104,16 +104,6 @@ hr {
     row-gap: 12px;
 }
 
-.download-container::before {
-    content: "";
-    position: absolute;
-    border-width: 0 10px 15px 10px;
-    top: -12px;
-    border-style: solid;
-    border-color: transparent transparent #272727 transparent;
-    left: 30px;
-}
-
 .download-container a {
     padding: .6rem;
     text-decoration: none;
