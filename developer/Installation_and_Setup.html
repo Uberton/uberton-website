@@ -47,7 +47,7 @@
         </header>
         <main>
             <p>
-                The content of this page will guide you through the process of setting up you computer for building the Überton VST plugins.
+                The content of this page will guide you through the process of setting up your computer for building the Überton VST plugins.
                 <ol>
                     <li><a href="#dl-and-prep">Download and prepare</a></li>
                     <li><a href="#cmake">Creating project files with CMake</a></li>
@@ -66,8 +66,54 @@
             </p>
             <p>
                 <a href="https://github.com/Uberton/Uberton/archive/refs/heads/main.zip" target="_blank">Download</a> or better
-                <a href="https://github.com/Uberton/Uberton" target="_blank">clone</a> the Überton project from Github and extract it so that the <span class="inlcode">Uberton</span> folder is in the same folder
+                <a href="https://github.com/Uberton/Uberton" target="_blank">clone</a> the Überton repository from Github and extract it so that
+                the <span class="inlcode">Uberton</span> folder is in the same folder
                 as <span class="inlcode">VST_SDK</span> (which again should contain the VST library folder <span class="inlcode">vst3sdk</span>).
+                We will refer to the folder that contains <span class="inlcode">VST_SDK</span> and <span class="inlcode">Uberton</span> to
+                <span class="inlcode">[<i>location</i>]</span>.
+            </p>
+            <p>
+                Your file structure should now look like this:
+                <ul class="file-list">
+                    <li class="fl-folder">
+                        Uberton
+                        <ul>
+                            <li class="fl-folder">bin</li>
+                            <li class="fl-folder">cmake</li>
+                            <li class="fl-folder">docs</li>
+                            <li class="fl-folder">src</li>
+                            <li class="fl-txt">.gitignore</li>
+                            <li class="fl-txt">CMakeLists.txt</li>
+                            <li class="fl-file">LICENSE</li>
+                            <li class="fl-file">README.md</li>
+                        </ul>
+                    </li>
+                    <li class="fl-folder">
+                        VST_SDK<ul>
+                            <li class="fl-folder">my_plugins</li>
+                            <li class="fl-folder">vst2sdk</li>
+                            <li class="fl-folder">VST3_Project_Generator</li>
+                            <li class="fl-folder">
+                                vst3sdk
+                                <ul>
+                                    <li class="fl-folder">base</li>
+                                    <li>&#8942;</li>
+                                    <li class="fl-folder">vstgui4</li>
+                                    <li class="fl-txt"><b>CMakeLists.txt</b></li>
+                                    <li class="fl-html">index.html</li>
+                                    <li class="fl-file">LICENSE</li>
+                                    <li class="fl-file">README.md</li>
+                                    <li class="fl-pdf">VST3_License_Agreement.pdf</li>
+                                    <li class="fl-pdf">VST3_Usage_Guidelines.pdf</li>
+                                </ul>
+                            </li>
+                            <li class="fl-file">copy_vst2_to_vst3_sdk.bat</li>
+                            <li class="fl-file">copy_vst2_to_vst3_sdk.sh</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <p>
                 To add the Überton library to the build process and the IDE project, you need to add the lines
                 <pre><code class="language-CMake"># Add Uberton library
 set(UBERTON_SRC_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../Uberton")
@@ -78,8 +124,11 @@ if(EXISTS ${UBERTON_SRC_PATH})
     add_subdirectory(${UBERTON_SRC_PATH} ${UBERTON_BIN_PATH})
 endif()
 </code></pre>
-                to end of the <span class="inlcode">CMakeLists.txt</span> file found in the <span class="inlcode">VST_SDK/vst3sdk</span> folder.
+                to end of the <span class="inlcode">CMakeLists.txt</span> file (marked bold in the file tree above) found in the <span class="inlcode">VST_SDK/vst3sdk</span> folder.
             </p>
+
+
+
             <h2><a id="cmake"></a>2. Creating project files with CMake</h2>
             <p>
                 Next, configure CMake for the <span class="inlcode">vst3sdk</span> folder in VST_SDK: open CMake, set the source path

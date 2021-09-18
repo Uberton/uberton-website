@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="14"
+   height="14"
+   viewBox="-1.692 -3.882 14 14"
+   enable-background="new -1.692 -3.882 14 14"
+   xml:space="preserve"
+   id="svg14"
+   sodipodi:docname="folder-icon.svg.2021_09_18_15_39_04.0.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
+   id="metadata18"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1018"
+   id="namedview16"
+   showgrid="false"
+   inkscape:zoom="33.714286"
+   inkscape:cx="1.2461684"
+   inkscape:cy="7.6287851"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg14" />
+<defs
+   id="defs2"><linearGradient
+   inkscape:collect="always"
+   id="linearGradient827"><stop
+     style="stop-color:#d5c16d;stop-opacity:1"
+     offset="0"
+     id="stop823" /><stop
+     style="stop-color:#cab045;stop-opacity:1"
+     offset="1"
+     id="stop825" /></linearGradient>
+<filter
+   style="color-interpolation-filters:sRGB;"
+   inkscape:label="Drop Shadow"
+   id="filter1030"><feFlood
+     flood-opacity="0.498039"
+     flood-color="rgb(0,0,0)"
+     result="flood"
+     id="feFlood1020" /><feComposite
+     in="flood"
+     in2="SourceGraphic"
+     operator="in"
+     result="composite1"
+     id="feComposite1022" /><feGaussianBlur
+     in="composite1"
+     stdDeviation="0.2"
+     result="blur"
+     id="feGaussianBlur1024" /><feOffset
+     dx="0"
+     dy="0"
+     result="offset"
+     id="feOffset1026" /><feComposite
+     in="SourceGraphic"
+     in2="offset"
+     operator="over"
+     result="composite2"
+     id="feComposite1028" /><feFlood
+     id="feFlood832"
+     in="SourceGraphic" /><feComposite
+     id="feComposite842"
+     operator="in"
+     in2="SourceGraphic"
+     result="result3" /><feGaussianBlur
+     stdDeviation="0.29999999999999999"
+     id="feGaussianBlur836"
+     result="result1" /><feComposite
+     in2="result1"
+     id="feComposite840"
+     result="result2"
+     in="SourceGraphic"
+     operator="arithmetic"
+     k1="0"
+     k2="-3.2599999999999998"
+     k3="0.48999999999999999" /><feComposite
+     in="result2"
+     result="result2"
+     id="feComposite844"
+     in2="composite2" /></filter><linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient827"
+   id="linearGradient829"
+   x1="5.1893559"
+   y1="1.9908813"
+   x2="5.3376608"
+   y2="6.0841017"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient827"
+   id="linearGradient847"
+   x1="0.26188406"
+   y1="3.7335"
+   x2="10.756116"
+   y2="3.7335"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient827"
+   id="linearGradient849"
+   gradientUnits="userSpaceOnUse"
+   x1="5.1893559"
+   y1="1.9908813"
+   x2="5.3376608"
+   y2="6.0841017" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient827"
+   id="linearGradient851"
+   gradientUnits="userSpaceOnUse"
+   x1="5.1893559"
+   y1="1.9908813"
+   x2="5.3376608"
+   y2="6.0841017" /><filter
+   id="filter872"
+   inkscape:label="Drop Shadow 2"
+   style="color-interpolation-filters:sRGB;"><feFlood
+     id="feFlood852"
+     result="flood"
+     flood-color="rgb(0,0,0)"
+     flood-opacity="1" /><feComposite
+     id="feComposite854"
+     result="composite1"
+     operator="in"
+     in2="SourceGraphic"
+     in="flood" /><feGaussianBlur
+     id="feGaussianBlur856"
+     result="blur"
+     stdDeviation="0.29999999999999999"
+     in="composite1" /><feOffset
+     id="feOffset858"
+     result="offset"
+     dy="0"
+     dx="0" /><feComposite
+     id="feComposite860"
+     result="composite2"
+     operator="over"
+     in2="offset"
+     in="SourceGraphic" /></filter></defs>
+<g
+   id="Form_1_Kopie_2_"
+   style="filter:url(#filter872)"
+   transform="matrix(1.1175821,0,0,1.1175821,-0.76640395,-0.53508279)">
+	<g
+   id="g6">
+		<path
+   d="M 10.579,0.24 C 10.576,0.107 10.475,0 10.353,0 H 0.666 C 0.544,0 0.442,0.107 0.439,0.24 L 0.262,7.209 C 0.258,7.351 0.358,7.467 0.484,7.467 h 10.05 c 0.126,0 0.226,-0.116 0.222,-0.258 z"
+   id="path4"
+   style="fill:url(#linearGradient847);fill-opacity:1"
+   inkscape:connector-curvature="0" />
+	</g>
+</g>
+<g
+   id="Form_1_2_"
+   style="fill:url(#linearGradient829);fill-opacity:1;filter:url(#filter872)"
+   transform="matrix(1.1175821,0,0,1.1175821,-0.76640395,-0.53508279)">
+	<g
+   id="g11"
+   style="fill:url(#linearGradient851);fill-opacity:1">
+		<path
+   d="M 10.788,0.918 H 0.23 C 0.098,0.918 -0.005,1.031 0,1.17 l 0.247,6.72 c 0.005,0.126 0.111,0.229 0.237,0.229 h 10.05 c 0.126,0 0.232,-0.103 0.237,-0.229 L 11.018,1.17 C 11.023,1.031 10.92,0.918 10.788,0.918 Z"
+   id="path9"
+   style="fill:url(#linearGradient849);fill-opacity:1"
+   inkscape:connector-curvature="0" />
+	</g>
+</g>
+</svg>

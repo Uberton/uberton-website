@@ -143,7 +143,6 @@ nav {
 .menu-open-button {
     background: rgba(255, 255, 255, .84);
     box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, .34);
-    margin-bottom: 19px;
 }
 
 .is-pinned .menu-open-button {
@@ -279,7 +278,7 @@ h2 {
 
 a.mhref {
     color: #9c9595;
-    transition: background-color .3s,color .3s;
+    transition: background-color .3s, color .3s;
     border-radius: 4px;
     padding: 3px;
 }
@@ -333,12 +332,12 @@ footer {
 /**************************************************************************************/
 
 @media screen and (max-width: 900px) {
-    .menu-button {
-        display: block;
+    .main-wrapper {
+        margin-top: 155px;
     }
 
-    .menu-open-button {
-        margin-bottom: 0;
+    .menu-button {
+        display: block;
     }
 
     nav {

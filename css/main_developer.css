@@ -157,6 +157,54 @@ h2 {
     padding: 1px 12px;
 }
 
+.file-list {
+    font-size: 14px;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.file-list, .file-list ul {
+    padding-left: 20px;
+}
+
+    .file-list li {
+        list-style-type: '-';
+        padding-left: 5px;
+        list-style-type: none;
+    }
+
+        .file-list li::before {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+            content: ' ';
+            background-size: 18px 18px;
+            display: inline-block;
+            position: relative;
+            top: 2px;
+        }
+
+li.fl-folder::before {
+    background-image: url(../media/img/folder-icon1.svg);
+}
+
+li.fl-txt::before {
+    background-image: url(../media/img/txt-icon-sml.svg);
+}
+
+li.fl-pdf::before {
+    background-image: url(../media/img/pdf-icon.svg);
+}
+
+li.fl-file::before {
+    background-image: url(../media/img/file-icon.svg);
+}
+
+li.fl-html::before {
+    background-image: url(../media/img/html-icon.svg);
+}
+
+
 @media screen and (max-width: 650px) {
     .main-wrapper {
         width: 90%;
