@@ -185,7 +185,7 @@ h2 {
         }
 
 li.fl-folder::before {
-    background-image: url(../media/img/folder-icon1.svg);
+    background-image: url(../media/img/folder-icon.svg);
 }
 
 li.fl-txt::before {
