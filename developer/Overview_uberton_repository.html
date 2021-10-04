@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Overview of the structure of the Überton Git repository">
+    <meta name="author" content="Überton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../ico/favicon-16x16.png">
+    <link rel="manifest" href="../ico/site.webmanifest">
+    <link rel="mask-icon" href="../ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../css/main_developer.css">
+    <link rel="stylesheet" href="../css/documentation.css">
+    <link rel="stylesheet" href="../css/prism.css">
+
+    <title>Überton Dev &middot; Overview Überton Repos</title>
+
+    <script>// prevent css transitions on start</script>
+    <script src="../js/prism.js"></script>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="../media/img/logo_black_glow.svg">
+    </div>
+    <nav>
+        <a href=".././">Home</a>
+        <a href="../Plugins">Plugins</a>
+        <a class="sel" href="../Developer">Developer</a>
+        <a href="https://github.com/Uberton/Uberton" target="_blank">Source Code</a>
+    </nav>
+
+
+
+    <div class="main-wrapper">
+        <header>
+            <h1>
+                Overview of the structure of the Überton Git repository
+            </h1>
+        </header>
+        <main>
+
+            <p>
+                Here, the structure of the Überton repository is explained.
+                <ol>
+                    <li><a href="#entire-rep">Entire repository in the large</a></li>
+                    <li><a href="#plugin-struc">Plugin structure</a></li>
+                </ol>
+            </p>
+            <br />
+            <hr />
+            <h2><a id="entire-rep"></a>1. Entire repository in the large</h2>
+            <p>
+                The structure of the repository looks like the following (approximately, parts omitted and not always updated immediately):
+                <ul class="file-list">
+                    <li class="fl-folder">
+                        Uberton
+                        <ul>
+                            <li class="fl-folder">
+                                bin
+                                <ul>
+                                    <li class="fl-file">ProjectGenerator.zip</li>
+                                </ul>
+                            </li>
+                            <li class="fl-folder">
+                                cmake
+                                <ul>
+                                    <li class="fl-file">Properties.cmake</li>
+                                </ul>
+                            </li>
+                            <li class="fl-folder">docs</li>
+                            <li class="fl-folder">
+                                src
+                                <ul class="fl-folder">
+
+                                    <li class="fl-folder">common</li>
+                                    <li class="fl-folder">installer</li>
+                                    <li class="fl-folder">
+                                        Plugins
+                                        <ul>
+                                            <li class="fl-folder">BasicFx</li>
+                                            <li class="fl-folder">BasicInstrument</li>
+                                            <li class="fl-folder">Hypersphere</li>
+                                            <li class="fl-folder">ManualGui</li>
+                                            <li class="fl-folder">Tesseract</li>
+                                            <li class="fl-txt">CMakeLists.txt</li>
+                                        </ul>
+                                    </li>
+                                    <li class="fl-folder">resonator_plugin_common</li>
+                                    <li class="fl-file">.clang-format</li>
+                                </ul>
+                            </li>
+                            <li class="fl-txt">.gitignore</li>
+                            <li class="fl-txt">CMakeLists.txt</li>
+                            <li class="fl-file">LICENSE</li>
+                            <li class="fl-file">README.md</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                A plugin project generator is included in the <span class="inlcode">bin/</span> directory
+                (see <a href="Creating_a_new_plugin_project">Creating a new plugin project</a>) and some logo
+                variations in <span class="inlcode">docs/</span>.
+            </p>
+            <p>
+                All the actual code is contained in the <span class="inlcode">src/</span> directory.
+                The project has one common library project <span class="inlcode">common/</span>
+                that contains code used in all plugins.
+            </p>
+            <p>
+                The <span class="inlcode">installer/</span> folder contains code for generating plugin installers
+                for Windows (and hopefully in the future Linux). The installer projects are not built by CMake by default
+                but can be enabled in the configuration step of CMake. Corresponding code needs to be added to the
+                <span class="inlcode">CMakeLists.txt</span> of a plugin to add an installer. Look e.g. at the
+                <span class="inlcode">Tesseract</span> plugin on how to do this.
+            </p>
+            <p>
+                In the <span class="inlcode">Plugins/</span> folder all plugin projects reside.
+                The <span class="inlcode">BasicFx</span> and <span class="inlcode">BasicInstrument</span>
+                are templates for new projects (and are updated with changes in the <span class="inlcode">common</span> library). When adding a new plugin (see also <a href="Creating_a_new_plugin_project">Creating a new plugin project</a>),
+                the <span class="inlcode">CMakeLists.txt</span> file in the <span class="inlcode">Plugins</span>
+                folder needs to be modified to trigger CMake to run again (adding or removing a space at the end
+                of the file is enough). The <span class="inlcode">ManualGui</span> plugin is just a working project
+                for GUI development and <span class="inlcode">Tesseract</span> and <span class="inlcode">Hypersphere</span>
+                are (at the moment) the actually deployed plugin projects.
+            </p>
+            <p>
+                As there are several similar plugins based on higher-dimensional resonators (Tesseract, Hypersphere and
+                in the future Hyperquader), the
+                <span class="inlcode">resonator_plugin_common</span> project unites the common code for these plugins.
+            </p>
+
+            <p>
+                Überton is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3.0</a> license following
+                VST3 which has a dual license - a proprietary one and an open source GPL license. See <a href="https://developer.steinberg.help/display/VST/VST+3+Licensing">here</a>
+                for licensing information on VST3.
+            </p>
+
+
+            <h2><a id="plugin-struc"></a>2. Plugin structure</h2>
+
+            <p>
+                Each plugin has a <span class="inlcode">resource/</span> directory containing UI resources and a <span class="inlcode">source/</span>
+                directory with C++ source files as well as a <span class="inlcode">CMakeLists.txt</span> file.
+            </p>
+            <p>
+                <ul class="file-list">
+                    <li class="fl-folder">
+                        Factory_Presets
+                    </li>
+                    <li class="fl-folder">
+                        resource
+                    </li>
+                    <li class="fl-folder">
+                        source
+                    </li>
+                    <li class="fl-folder">
+                        User_Guide
+                    </li>
+                    <li class="fl-txt">CMakeLists.txt</li>
+                </ul>
+            <p>
+                A set of factory presets for the plugin can be added as well as a user guide or manual to be included in the
+                Windows/Linux installer. 
+            </p>
+            <p>
+                Extended structure of the Tesseract directory:
+            </p>
+            <p>
+                <ul class="file-list">
+                    <li class="fl-folder">
+                        Factory_Presets
+                        <ul>
+                            <li class="fl-file">Electronic Chimes.vstpreset</li>
+                            <li class="fl-file">Light Ringing.vstpreset</li>
+                            <li>&#8942;</li>
+                        </ul>
+                    </li>
+                    <li class="fl-folder">
+                        resource
+                        <ul>
+                            <li class="fl-file">editor.uidesc</li>
+                            <li class="fl-file">Info.plist</li>
+                            <li class="fl-png">81B3F1BA02024999837809E4A0BE69D0_snapshot.png</li>
+                            <li class="fl-png">81B3F1BA02024999837809E4A0BE69D0_snapshot_2.0x.png</li>
+                            <li class="fl-png">background.png</li>
+                            <li>&#8942;</li>
+                        </ul>
+                    </li>
+                    <li class="fl-folder">
+                        source
+                        <ul>
+                            <li class="fl-cpp">controller.cpp</li>
+                            <li class="fl-header">controller.h</li>
+                            <li class="fl-cpp">factory.cpp</li>
+                            <li class="fl-header">ids.h</li>
+                            <li class="fl-cpp">processor.cpp</li>
+                            <li class="fl-header">processor.h</li>
+                        </ul>
+                    </li>
+                    <li class="fl-folder">
+                        User_Guide
+                        <ul>
+                            <li class="fl-pdf">Tesseract_User_Guide</li>
+                        </ul>
+                    </li>
+                    <li class="fl-txt">CMakeLists.txt</li>
+                </ul>
+            </p>
+
+        </main>
+    </div>
+</body>
+
+</html>

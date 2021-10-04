@@ -204,6 +204,16 @@ li.fl-html::before {
     background-image: url(../media/img/html-icon.svg);
 }
 
+li.fl-cpp::before {
+    background-image: url(../media/img/cpp-icon.svg);
+}
+li.fl-header::before {
+    background-image: url(../media/img/header-icon.svg);
+}
+li.fl-png::before {
+    background-image: url(../media/img/png-icon.svg);
+}
+
 
 @media screen and (max-width: 650px) {
     .main-wrapper {
