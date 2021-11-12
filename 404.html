@@ -53,14 +53,17 @@
         }
 
         .main-wrapper {
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
+        .heading {
+            font-size: 3rem;
+            margin: 0;
+        }
 
         @media screen and (max-width: 900px) {
             main {
                 font-size: 1.3rem;
-                text-align: left;
             }
 
                 main img {
@@ -68,20 +71,23 @@
                 }
 
             .main-wrapper {
-                margin-top: 3rem;
+                margin-top: 1.5rem;
+            }
+            .heading {
+                font-size: 2rem;
             }
         }
 
         @media screen and (max-width: 430px) {
             main {
                 font-size: 1.2rem;
-                text-align: left;
             }
 
             .main-wrapper {
-                margin-top: 2rem;
+                margin-top: 1rem;
             }
         }
+
     </style>
 </head>
 
@@ -94,8 +100,11 @@
 
     <div class="main-wrapper">
         <main>
+            <p class="heading">
+                404
+            </p>
             <p>
-                404 Oops, looks like a black hole has
+                Oops, looks like a black hole has
                 swallowed the page you're trying to visit.
             </p>
 
