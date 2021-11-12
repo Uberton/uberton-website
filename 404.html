@@ -24,7 +24,7 @@
 
     <style>
         main {
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-align: left;
             display: flex;
             justify-content: center;
@@ -42,6 +42,7 @@
 
         main img {
             max-width: 80%;
+            image-rendering: -webkit-optimize-contrast;
         }
 
         .header {
@@ -52,25 +53,33 @@
         }
 
         .main-wrapper {
-            margin-top: 5rem;
+            margin-top: 4rem;
         }
 
 
         @media screen and (max-width: 900px) {
             main {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 text-align: left;
             }
 
                 main img {
                     max-width: 100%;
                 }
+
+            .main-wrapper {
+                margin-top: 3rem;
+            }
         }
 
         @media screen and (max-width: 430px) {
             main {
                 font-size: 1.2rem;
                 text-align: left;
+            }
+
+            .main-wrapper {
+                margin-top: 2rem;
             }
         }
     </style>
@@ -87,16 +96,15 @@
         <main>
             <p>
                 404 Oops, looks like a black hole has
-                swallowed the page you're trying to visit. 
+                swallowed the page you're trying to visit.
             </p>
 
             <img src="media/img/404_background.jpg" />
-            <p>
-                <ul>
-                    <li>Go <a class="mhref" href="./">back to the main page</a> or</li>
-                    <li><a class="mhref" href="./Contact">contact</a> the developers</li>
-                </ul>
-            </p>
+
+            <ul>
+                <li>Go <a class="mhref" href="./">back to the main page</a> or</li>
+                <li><a class="mhref" href="./Contact">contact</a> the developers</li>
+            </ul>
 
         </main>
     </div>
