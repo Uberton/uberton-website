@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Extraordinary VST plugins based on physical simulations">
+    <meta name="author" content="Überton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Überton &middot; 404</title>
+
+    <script>// prevent css transitions on start</script>
+    <script src="js/main.js"></script>
+
+    <style>
+        main {
+            font-size: 2rem;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        body {
+            background-color: #090909;
+            background-image: url(media/img/404_background.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background: #090909;
+        }
+
+        main img {
+            max-width: 80%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            filter: invert() brightness(0.2);
+            margin-top: 2rem;
+        }
+
+        .main-wrapper {
+            margin-top: 5rem;
+        }
+
+
+        @media screen and (max-width: 900px) {
+            main {
+                font-size: 1.5rem;
+                text-align: left;
+            }
+
+                main img {
+                    max-width: 100%;
+                }
+        }
+
+        @media screen and (max-width: 430px) {
+            main {
+                font-size: 1.2rem;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body onload="onBodyLoad()">
+
+    <div class="header">
+        <img src="media/img/logo_black_glow.svg">
+    </div>
+
+
+    <div class="main-wrapper">
+        <main>
+            <p>
+                404 Oops, looks like a black hole has
+                swallowed the page you're trying to visit. 
+            </p>
+
+            <img src="media/img/404_background.jpg" />
+            <p>
+                <ul>
+                    <li>Go <a class="mhref" href="./">back to the main page</a> or</li>
+                    <li><a class="mhref" href="./Contact">contact</a> the developers</li>
+                </ul>
+            </p>
+
+        </main>
+    </div>
+</body>
+
+</html>
