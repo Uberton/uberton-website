@@ -1,0 +1,23 @@
+
+.skip-to-content {
+    padding: 1rem;
+    position: absolute;
+    z-index: 21;
+    background: rgb(128 128 128 / 81%);
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translateY(-120%);
+    transition: transform .4s;
+}
+
+    .skip-to-content:focus {
+        transform: translateY(0);
+    }
+
+
+#main-content {
+    scroll-margin-top: 60px;
+}
