@@ -205,13 +205,14 @@ nav {
     max-width: 1000px;
     margin: 2em auto;
     margin-top: 136px;
+    color: #f0f0f0;
 }
 
+
 main {
-    padding: 8px;
     line-height: 1.8;
     font-size: 16px;
-    color: #f0f0f0;
+    padding: 8px;
     text-align: justify;
     align-items: center;
     margin-bottom: 6rem;
@@ -417,4 +418,13 @@ footer {
         .logo img, svg {
             margin-top: 52px;
         }
+}
+
+.important-note {
+    background: rgba(252, 89, 89, 0.616);
+    padding: 1em;
+}
+
+.important-note a {
+    color: #f0f0f0;
 }
